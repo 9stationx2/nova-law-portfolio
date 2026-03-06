@@ -1,6 +1,6 @@
 export const portfolioData = {
   intro: {
-    title: "법의 언어를 데이터로",
+    title: "법률과 IT의 통역사",
     subtitle: "법학 전공 / 전산세무 / SQLD\n조화"
   },
   //섹션용 데이터

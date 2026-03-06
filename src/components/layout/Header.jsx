@@ -4,7 +4,7 @@ const Header = () => {
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* 로고 영역 (클릭 시 맨 위로 이동) */}
         <a href="#intro" className="font-extrabold text-xl tracking-tighter text-slate-900">
-          송무팀<span className="text-brand">_</span>내이름
+          집단소송팀<span className="text-brand"> _ </span>내이름
         </a>
         
         {/* 데스크탑 네비게이션 메뉴 */}
@@ -13,10 +13,10 @@ const Header = () => {
             핵심 역량
           </a>
           <a href="#vision" className="hover:text-brand transition-colors">
-            입사 후 포부
+            합류 후 90일 플랜
           </a>
           <a href="#contact" className="hover:text-brand transition-colors">
-            연락처
+            GitHub 코드 확인
           </a>
         </nav>
 

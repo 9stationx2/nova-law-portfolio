@@ -1,47 +1,113 @@
-import Card from "../components/ui/Card"; // Card 임포트 잊지 마세요!
+import Badge from "../components/ui/Badge";
+import Card from "../components/ui/Card";
 
 const VisionForNova = () => {
-  const plans = [
-    {
-      title: "AI 기반 리서치 효율화",
-      desc: "프롬프트 엔지니어링 역량을 활용해 판례 검색 및 법률 문서 초안 작성 시간을 단축하고, 변호사님이 핵심 변론 전략에 집중할 수 있는 환경을 만듭니다."
-    },
-    {
-      title: "데이터 구조화 및 증거 분석",
-      desc: "SQLD와 전산세무 지식을 결합해 복잡한 자금 흐름을 데이터화합니다. 특히 경제범죄 사건에서 숫자 뒤에 숨은 흐름을 파악하여 결정적 증거 분석을 지원합니다."
-    },
-    {
-      title: "디지털 네이티브 협업",
-      desc: "비대면/재택 환경에 최적화된 IT 역량으로 원격 협업 툴을 능숙하게 활용하며, 저작권 및 악플 대응 등 대량의 디지털 자료를 체계적으로 관리합니다."
-    }
-  ];
-
   return (
-    <section id="vision" className="py-20 px-6 bg-slate-900 text-white">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">입사 후 포부</h2>
-          <div className="w-12 h-1 bg-brand"></div>
-          <p className="mt-6 text-slate-400 text-lg break-keep">
-            노바의 혁신적인 송무 체계를 데이터로 뒷받침하겠습니다.
+    <section id="vision" className="py-24 px-6 bg-slate-900 text-slate-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <Badge variant="primary" size="lg">
+            합류 후 90일 플랜
+          </Badge>
+          <h2 className="text-3xl md:text-5xl font-bold mt-6 mb-6 tracking-tight">
+            보안과 송무를 잇는 데이터 허브
+          </h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto break-keep leading-relaxed">
+           집단소송의 시작은 쏟아지는 의뢰인의 문의(CS)와 방대한 종이 서류 취합입니다. <br className="hidden md:block" />
+  저는 이 치열한 실무의 최전선에서 발로 뛰는 동시에, 파편화된 원고 데이터를 <br className="hidden md:block" />
+  완벽한 법정 제출용 증거로 정제하는 시스템적 허브(Hub)가 되겠습니다.
           </p>
         </div>
 
-        {/* 수직 리스트 형태의 카드 그룹 */}
-        <div className="space-y-6">
-          {plans.map((plan, index) => (
-            <Card 
-              key={index} 
-              className="bg-slate-800 border-slate-700 hover:border-brand group transition-all"
-            >
-              <h3 className="text-xl font-bold mb-3 group-hover:text-brand transition-colors text-slate-100">
-                {plan.title}
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed break-keep">
-                {plan.desc}
-              </p>
-            </Card>
-          ))}
+        {/* 데이터 파이프라인 3단계 UI */}
+        <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 lg:gap-6 mt-12">
+          
+          {/* 1단계: 외부망/웹 DB (암호화 상태) */}
+          <Card className="flex-1 bg-slate-800 border-slate-700 flex flex-col">
+            <div className="mb-4">
+              <span className="text-brand-light font-mono text-sm font-bold block mb-1">STEP 01. Web DB</span>
+              <h3 className="text-xl font-bold text-white">외부망 데이터 수집</h3>
+              <p className="text-sm text-slate-400 mt-2">개발팀 협업: AES-256 암호화로 민감정보 보호</p>
+            </div>
+            {/* 데이터가 알아볼 수 없는 난수로 암호화되어 있음을 시각화 */}
+            <div className="bg-slate-950 p-4 rounded-md font-mono text-xs text-green-400 overflow-x-auto flex-1 border border-slate-800">
+              <pre>{`{
+  "plaintiff": "김노바",
+  "ssn": "ENC(U2FsdGVkX1+...)",
+  "evidence": "img_01.jpg",
+  "bank": "신한",
+  "account": "ENC(x8F9zQ2...)"
+}`}</pre>
+            </div>
+          </Card>
+
+          {/* 화살표 */}
+          <div className="flex items-center justify-center text-slate-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 transform transition-transform lg:-rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+
+          {/* 2단계: 내부망 정제 (나의 역할) */}
+          <Card className="flex-1 bg-slate-800 border-brand/50 shadow-[0_0_15px_rgba(79,70,229,0.2)] flex flex-col relative transform lg:-translate-y-4">
+            <div className="absolute -top-3 right-4">
+              <Badge variant="primary">My Role</Badge>
+            </div>
+            <div className="mb-4">
+              <span className="text-brand-light font-mono text-sm font-bold block mb-1">STEP 02. Internal Net</span>
+              <h3 className="text-xl font-bold text-white">내부망 복호화 및 검증</h3>
+              <p className="text-sm text-slate-400 mt-2">인가된 환경에서 증거물 대조 및 유효성 검증</p>
+            </div>
+            <div className="bg-slate-950 p-4 rounded-md font-mono text-xs text-blue-400 overflow-x-auto flex-1 border border-slate-800">
+              <pre>{`-- 인가된 Admin 환경에서만 복호화 수행
+SELECT 
+  name,
+  AES_DECRYPT(ssn, 'internal_key') AS real_ssn,
+  evidence_status
+FROM mass_litigation_raw
+WHERE is_verified = TRUE;`}</pre>
+            </div>
+          </Card>
+
+          {/* 화살표 */}
+          <div className="flex items-center justify-center text-slate-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 transform transition-transform lg:-rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+
+          {/* 3단계: 송무팀 (법원 제출용 평문) */}
+          <Card className="flex-1 bg-slate-800 border-slate-700 flex flex-col">
+            <div className="mb-4">
+              <span className="text-brand-light font-mono text-sm font-bold block mb-1">STEP 03. Court Output</span>
+              <h3 className="text-xl font-bold text-white">송무용 문서 자동화</h3>
+              <p className="text-sm text-slate-400 mt-2">변호사님이 즉시 제출 가능한 평문(Plaintext) 변환</p>
+            </div>
+            <div className="bg-white p-2 rounded-md overflow-x-auto flex-1 border border-slate-300">
+              <table className="w-full text-xs text-left text-slate-800 border-collapse">
+                <thead>
+                  <tr className="bg-slate-100 border-b border-slate-300">
+                    <th className="p-1.5 font-bold">원고명</th>
+                    <th className="p-1.5 font-bold">주민등록번호</th>
+                    <th className="p-1.5 font-bold">증거(호증)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-1.5">김노바</td>
+                    <td className="p-1.5 tracking-widest text-red-600 font-medium">900101-1234567</td>
+                    <td className="p-1.5 text-brand font-medium">갑제1호증</td>
+                  </tr>
+                  <tr>
+                    <td className="p-1.5">이리걸</td>
+                    <td className="p-1.5 tracking-widest text-red-600 font-medium">850505-2345678</td>
+                    <td className="p-1.5 text-brand font-medium">갑제2호증</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </Card>
+
         </div>
       </div>
     </section>
